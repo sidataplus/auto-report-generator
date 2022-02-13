@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "auto-report-generator"
+version = "0.1.0"
+description = "Automatically generate filled-in reports in PDF with data from MS SQL using Mail Merge & Python"
+authors = ["Siriraj Informatics and Data Innovation Center <sidata@mahidol.ac.th>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+docx-mailmerge = "^0.5.0"
+pandas = "^1.4.1"
+SQLAlchemy = "^1.4.31"
+pyodbc = "^4.0.32"
+docx2pdf = "^0.1.8"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
