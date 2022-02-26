@@ -1,4 +1,4 @@
-FROM python:3.9.10-slim-bullseye
+FROM python:3-slim-bullseye
 
 WORKDIR /usr/src/app
 
@@ -15,13 +15,14 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - &&\
     apt-get install -y unixodbc-dev libgssapi-krb5-2
 ENV PATH="$PATH:/opt/mssql-tools/bin"
 
-# install peotry
+RUN poetry env use python3.9
 RUN pip install poetry
 
-COPY requirements.txt pyproject.toml poetry.lock /usr/src/app
+COPY pyproject.toml /usr/src/app
+
 RUN poetry install
 
-COPY ./* /usr/src/app/
+COPY src/* /usr/src/app/
 
 ENTRYPOINT poetry run python src/gen-report.py\
   --host         [database host server]\
