@@ -11,7 +11,7 @@ with data from MSSQL Server using Mail Merge & Python
 
 ## How-to use
 
-### without Poetry (recommended)
+### with Poetry (recommended)
 
 ```
 cd [path-of-the-repository-root-directory]
