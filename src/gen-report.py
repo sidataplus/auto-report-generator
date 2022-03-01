@@ -67,10 +67,12 @@ for index, _ in enumerate(df):
         composer.append(Document(f"out/tmp/{index}.docx"))
     print("[" + str(index) + "]", end="")
 composer.save(f"out/{filename}_tmp.docx")
+print("done!")
 
 # Convert .docx to .pdf
 print("covert docx to pdf ...")
 convert(f"out/{filename}_tmp.docx", f"out/{filename}_tmp.pdf")
+print("done!")
 
 # Encrypt and save the pdf
 print("clean up tmp files ...")
@@ -80,7 +82,7 @@ Pdf.open(f"out/{filename}_tmp.pdf").save(
                           owner=args.pdf_password,
                           allow=Permissions(extract=False)))
 
-# Initialize the pdf file
+# Clean up the pdf file
 print("clean up tmp files ...")
 os.removedirs("out/tmp")
 os.remove(f"out/{filename}_tmp.docx")

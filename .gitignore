@@ -1,3 +1,5 @@
+poetry.lock
+
 # Prevent unintentional push of sensitive files
 *.docx
 *.pdf
