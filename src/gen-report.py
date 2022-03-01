@@ -59,20 +59,23 @@ for index, row in enumerate(df):
 
 print("merging ...")
 composer = Composer(Document("out/tmp/0.docx"))
+page_break_doc = Document()
+page_break_doc.add_page_break()
 for index, _ in enumerate(df):
     if index > 0:
-        composer.append(Document(f"out/tmp/index.docx"))
+        composer.append(page_break_doc)
+        composer.append(Document(f"out/tmp/{index}.docx"))
     print("[" + str(index) + "]", end="")
-composer.save("out/{filename}_tmp.docx")
+composer.save(f"out/{filename}_tmp.docx")
 
 # Convert .docx to .pdf
 print("covert docx to pdf ...")
-convert("out/{filename}_tmp.docx", f"out/{filename}_tmp.pdf")
+convert(f"out/{filename}_tmp.docx", f"out/{filename}_tmp.pdf")
 
 # Encrypt and save the pdf
 print("clean up tmp files ...")
 Pdf.open(f"out/{filename}_tmp.pdf").save(
-    r"out/{filename}.pdf",
+    f"out/{filename}.pdf",
     encryption=Encryption(user=args.pdf_password,
                           owner=args.pdf_password,
                           allow=Permissions(extract=False)))
