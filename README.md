@@ -8,6 +8,7 @@ with data from MSSQL Server using Mail Merge & Python
 - python 3.9
 - poetry ^1.1 (`pip install poetry`) [Documentation](https://python-poetry.org/docs/)
 - MSSQL Server ODBC 17 on [macOS](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos?view=sql-server-ver15), [Linux](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15), [Windows](https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver15)
+- MS Word
 
 ## How-to use
 
