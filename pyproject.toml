@@ -13,7 +13,7 @@ pandas = "^1.4.1"
 SQLAlchemy = "^1.4.31"
 pyodbc = "^4.0.32"
 docx2pdf = "^0.1.8"
-pikepdf = "^4.5.0"
+pikepdf = "^5.4.0"
 
 [tool.poetry.dev-dependencies]
 
